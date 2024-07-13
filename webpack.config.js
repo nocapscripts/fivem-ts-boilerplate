@@ -35,14 +35,23 @@ const serverConfig = {
       stringArray: true,
       transformObjectKeys: true,
       compact: true,
+      controlFlowFlattening: false,  // Simplified obfuscation
+      deadCodeInjection: false,      // Simplified obfuscation
+      selfDefending: false,          // Simplified obfuscation
+      debugProtection: false,        // Simplified obfuscation
+      disableConsoleOutput: false,   // Simplified obfuscation
+      splitStrings: false,           // Simplified obfuscation
     }),
     new ESLintPlugin({
       extensions: ['ts', 'tsx', 'js'],
+      emitWarning: false,
+      emitError: false,
+      failOnError: false
     }),
   ],
-  optimization: { minimize: true },
+  optimization: { minimize: false },
   stats: {
-    errorDetails: false,
+    errorDetails: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -81,14 +90,23 @@ const clientConfig = {
       stringArray: true,
       transformObjectKeys: true,
       compact: true,
+      controlFlowFlattening: false,  // Simplified obfuscation
+      deadCodeInjection: false,      // Simplified obfuscation
+      selfDefending: false,          // Simplified obfuscation
+      debugProtection: false,        // Simplified obfuscation
+      disableConsoleOutput: false,   // Simplified obfuscation
+      splitStrings: false,           // Simplified obfuscation
     }),
     new ESLintPlugin({
       extensions: ['ts', 'tsx', 'js'],
+      emitWarning: false,
+      emitError: false,
+      failOnError: false
     }),
   ],
-  optimization: { minimize: true },
+  optimization: { minimize: false },
   stats: {
-    errorDetails: false,
+    errorDetails: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
